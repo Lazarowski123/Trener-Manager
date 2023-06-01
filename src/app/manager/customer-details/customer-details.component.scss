@@ -1,0 +1,19 @@
+.details{
+    padding: 1rem;
+    &__name{
+        text-align: center;
+        padding: 1rem 0;
+    }
+}
+@media (min-width: 768px){
+    .details {
+      &__name {
+        padding: 3rem 0;
+        font-size: 32px;
+      }
+      p{
+        font-size: 16px;
+      }
+    }
+  }
+  

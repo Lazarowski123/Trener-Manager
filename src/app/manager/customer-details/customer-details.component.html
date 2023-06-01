@@ -1,0 +1,16 @@
+<div class="details">
+    <h1 class="details__name">{{customer.name}}</h1>
+    <div class="details__box">
+      <div class="details__contract-details">
+        <p>Dostępne wejścia: {{ customer.quantity }}</p>
+        <p>Rodzaj treningów: {{ customer.type }}</p>
+        <p>Dodatkowe opcje: {{ customer.options }}</p>
+      </div>
+      <div class="details__customer-details">
+        <p>Waga początkowa: {{customer.weight.initial}} Kg</p>
+        <p>Waga aktualna: {{customer.weight.current}} Kg</p>
+        <p>Waga docelowa: {{customer.weight.target}} Kg</p>
+      </div>
+    </div>
+  </div>
+  

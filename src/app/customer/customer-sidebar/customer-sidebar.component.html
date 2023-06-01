@@ -1,0 +1,15 @@
+<div class="sidebar">
+  <button class="sidebar__burger-btn" (click)="changeMenu()"><i class="fa-solid fa-bars"></i></button>
+  <div class="sidebar__menu" [ngClass]="{show:menu}">
+    <ul>
+      <li routerLinkActive="active" routerLink="info" (click)="hiden()">Dane ogólne</li>
+      <li routerLinkActive="active" routerLink="dates" (click)="hiden()">Grafik Treningów</li>
+    </ul>
+  </div>
+</div>
+<div class="menu"> 
+    <ul>
+      <li routerLinkActive="active" routerLink="info">Dane ogólne</li>
+      <li routerLinkActive="active" routerLink="dates">Grafik Treningów</li>
+    </ul>
+</div>

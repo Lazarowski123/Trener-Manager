@@ -1,0 +1,45 @@
+.details {
+  width: 250px;
+  padding: 1rem;
+  border: 2px solid gray;
+  border-radius: 5%;
+  color: white;
+  background-color: black;
+  &__name {
+    text-align: center;
+    padding: 1rem;
+    font-size: 28px;
+  }
+  &__contract-details,
+  &__customer-details {
+    padding: 1rem;
+  }
+  &__title {
+    text-align: center;
+    font-size: 20px;
+  }
+}
+@media (min-width: 576px) {
+  .details {
+    width: 400px;
+    padding: 2rem;
+    &__box {
+      display: flex;
+    }
+  }
+}
+@media (min-width: 768px){
+  .details {
+    width: 550px;
+    padding: 3rem;
+    &__name {
+      font-size: 36px;
+    }
+    &__title  {
+      font-size: 28px;
+    }
+    p{
+      font-size: 18px;
+    }
+  }
+}

@@ -1,0 +1,81 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 15vw;
+  background-color: #7c7b7b;
+  display: flex;
+  justify-content: center;
+  padding: 80px 5px;
+  z-index: 10;
+  &__burger-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 5px;
+  }
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 85vw;
+    height: 100vh;
+    padding: 30% 5%;
+    transform: translateX(100%);
+    background-color: #878282;
+    transition: transform 0.3s;
+    z-index: 10;
+    li {
+      padding: 20px;
+      list-style: none;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+    }
+  }
+}
+.menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 20vw;
+  background-color: #7c7b7b;
+  justify-content: center;
+  padding: 100px 5px;
+  z-index: 10;
+  li {
+    padding: 20px;
+    list-style: none;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+  }
+}
+.active {
+  border-radius: 10px;
+  background-color: #272727;
+}
+.show {
+  transform: translateX(0);
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+  .menu {
+    display: flex;
+  }
+}
+@media (min-width:992px){
+  .menu{
+    max-width: 300px;
+    li{
+      font-size: 24px;
+    }
+  }
+}

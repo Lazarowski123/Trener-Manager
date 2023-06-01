@@ -1,0 +1,15 @@
+<div class="sidebar">
+  <button class="sidebar__burger-btn" (click)="changeMenu()"><i class="fa-solid fa-bars"></i></button>
+  <div class="sidebar__menu" [ngClass]="{show:menu}">
+    <ul>
+      <li routerLinkActive="active" routerLink="customer-list" (click)="hiden()">Lista Klientów</li>
+      <li routerLinkActive="active" routerLink="add-customer" (click)="hiden()">Dodaj Klienta</li>
+    </ul>
+  </div>
+</div>
+<div class="menu">
+  <ul>
+    <li routerLinkActive="active" routerLink="customer-list">Lista Klientów</li>
+    <li routerLinkActive="active" routerLink="add-customer">Dodaj Klienta</li>
+  </ul>
+</div>

@@ -1,0 +1,66 @@
+<div class="add-panel">
+  <h1 class="add-panel__title">Dodaj klienta</h1>
+  <div>
+    <form class="add-panel__form" #addCustomerForm="ngForm" (ngSubmit)="add(addCustomerForm)">
+      <div class="field">
+        <label for="name">Nazwa klienta</label>
+        <input required #nameInput="ngModel" type="text" id="name" name="name" placeholder="Imię Nawisko"
+          [(ngModel)]="name" />
+        <ng-container *ngIf="nameInput.invalid && nameInput.touched">
+          <p class="form-error">Podaj imię</p>
+        </ng-container>
+      </div>
+      <div class="field">
+        <label for="quantity">Ilość wejść</label>
+        <input required #quantityInput="ngModel" type="number" id="quantity" name="quantity"
+          placeholder="Podaj ilość treningów" [(ngModel)]="quantity" />
+        <ng-container *ngIf="quantityInput.invalid && quantityInput.touched">
+          <p class="form-error">Podaj ilość wejść</p>
+        </ng-container>
+      </div>
+
+      <div class="add-panel__select">
+        <label for="select-btn">Typ treningów</label>
+        <button type="button" class="add-panel__select-btn" id="select-btn" (click)="changeSelect()">
+          <span>{{selectName}}</span>
+          <div class="add-panel__select-btn__arrow"></div>
+        </button>
+
+        <div class="add-panel__dropdown show" [ngClass]="{show: select}">
+          <label class="add-panel__dropdown__select-item" for="personals">Personalne</label>
+          <input class="add-panel__dropdown__option" name="type" id="personals" type="radio" [value]="'Personalne'"
+            (click)="selectOption('Personalne')">
+          <label class="add-panel__dropdown__select-item" for="groups">Grupowe</label>
+          <input class="add-panel__dropdown__option" name="type" id="groups" type="radio" [value]="'Grupowe'" (click)="selectOption('Grupowe')">
+        </div>
+        <ng-container *ngIf="selectShow">
+          <p class="form-error">Wybierz typ treningów</p>
+        </ng-container>
+      </div>
+
+      <div class="field">
+        <label for="options">Typ</label>
+        <input required #optionsInput="ngModel" type="text" id="options" name="options" placeholder="Opcje dodatkowe"
+          [(ngModel)]="options">
+        <ng-container *ngIf="optionsInput.invalid && optionsInput.touched">
+          <p class="form-error">Podaj opcje umowy np. dieta , fizjoterapia</p>
+        </ng-container>
+      </div>
+      <div class="field">
+        <label>Waga</label>
+        <input required #initialWeightInput="ngModel" type="number" name="initial-weight" placeholder="Waga początkowa"
+          [(ngModel)]="initial">
+        <input required #currentWeightInput="ngModel" type="number" name="current-weight" placeholder="Waga aktualna"
+          [(ngModel)]="current">
+        <input required #targetWeightInput="ngModel" type="number" name="target-weight" placeholder="Waga docelowa"
+          [(ngModel)]="target">
+        <ng-container
+          *ngIf="(initialWeightInput.invalid && initialWeightInput.touched) || (currentWeightInput.invalid && currentWeightInput.touched) ||(targetWeightInput.invalid && targetWeightInput.touched)">
+          <p class="form-error">Uzupełnij wszystkie pola</p>
+        </ng-container>
+      </div>
+      <button class="add-panel__add-btn" type="submit" [disabled]="addCustomerForm.invalid">Dodaj</button>
+    </form>
+  </div>
+
+</div>

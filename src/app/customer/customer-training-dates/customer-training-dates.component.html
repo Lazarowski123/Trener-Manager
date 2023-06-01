@@ -1,0 +1,21 @@
+<div class="training-dates" >
+  <h2>Grafik Treningów</h2>
+  <div class="training-dates__table" >
+    <table>
+      <thead>
+        <tr>
+          <th>Trening</th>
+          <th>Data</th>
+          <th>Godzina</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of customer.trainingList">
+          <td>{{c.type}}</td>
+          <td>{{c.date}}</td>
+          <td>{{c.time}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

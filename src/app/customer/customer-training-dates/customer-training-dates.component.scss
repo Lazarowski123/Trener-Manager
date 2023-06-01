@@ -1,0 +1,59 @@
+.training-dates {
+  width: 250px;
+  padding: 2rem 1rem;
+  border: 2px solid gray;
+  border-radius: 5%;
+  color: white;
+  background-color: black;
+  h2 {
+    text-align: center;
+  }
+  &__table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  th {
+    padding: 1rem;
+    font-size: 16px;
+  }
+  td {
+    text-align: center;
+    font-size: 12px;
+  }
+}
+@media (min-width: 576px) {
+  .training-dates {
+    width: 400px;
+    padding: 2rem;
+    h2 {
+      font-size: 24px;
+    }
+    th {
+      padding: 2rem;
+      font-size: 18px;
+    }
+    td {
+      padding: 0 1rem;
+      font-size: 14px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .training-dates {
+    width: 500px;
+    padding: 3rem;
+    h2 {
+      font-size: 28px;
+    }
+    th {
+      padding: 2rem;
+      font-size: 22px;
+    }
+    td {
+      padding: 0.5rem 1rem;
+      font-size: 18px;
+    }
+  }
+}

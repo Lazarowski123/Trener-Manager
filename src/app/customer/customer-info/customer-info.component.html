@@ -1,0 +1,21 @@
+<div class="details" *ngIf="done ;else loading">
+  <h2 class="details__name">{{customer.name}}</h2>
+  <div class="details__box">
+    <div class="details__contract-details">
+      <h3 class="details__title">Informacje</h3>
+      <p>Dostępne wejścia: {{ customer.quantity }}</p>
+      <p>Rodzaj treningów: {{ customer.type }}</p>
+      <p>Dodatkowe opcje: {{ customer.options }}</p>
+    </div>
+    <div class="details__customer-details" *ngIf="customer.weight">
+      <h3 class="details__title">Waga</h3>
+      <p>Waga początkowa: {{customer.weight.initial}} Kg</p>
+      <p>Waga aktualna: {{customer.weight.current}} Kg</p>
+      <p>Cel: {{customer.weight.target}} Kg</p>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <span class="loading">Loading...</span>
+</ng-template>

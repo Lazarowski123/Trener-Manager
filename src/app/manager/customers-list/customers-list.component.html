@@ -1,0 +1,23 @@
+<div class="list" *ngIf="done;else loading">
+  <h2 class="list__title">Lista klientów</h2>
+  <div class="list__select">
+    <button type="button" class="list__select-btn" id="select-btn" (click)="changeSelect()">
+      <span>{{selectName}}</span>
+      <div class="list__select-btn__arrow"></div>
+    </button>
+    <div class="list__dropdown" [ngClass]="{show: select}">
+      <div *ngFor="let name of names">
+        <label class="list__dropdown__select-item" for="{{name}}">{{name}}</label>
+        <input #inputName class="list__dropdown__option" name="type" id="{{name}}" type="radio" value="{{name}}"
+          (click)="selectOption(inputName.value)">
+      </div>
+    </div>
+  </div>
+  <div class="details" *ngIf="customer">
+    <mgr-customer-details [customer]="customer"></mgr-customer-details>
+  </div>
+  <button class="list__delete-btn" (click)="deleteCustomer()">Usuń klienta</button>
+</div>
+<ng-template #loading>
+  <span class="loading">Loading...</span>
+</ng-template>
